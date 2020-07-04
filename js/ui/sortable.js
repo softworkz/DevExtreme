@@ -153,9 +153,7 @@ const Sortable = Draggable.inherit({
     },
 
     dragLeave: function() {
-        if(this === this._getTargetDraggable()) {
-            this.option('toIndex', -1);
-        } else {
+        if(this !== this._getTargetDraggable()) {
             this.option('toIndex', this.option('fromIndex'));
         }
     },
